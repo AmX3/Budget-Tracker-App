@@ -25,7 +25,7 @@ const theme: ITheme = {
         secondary: "#FFD166",
         body: "#FFFFFF",
         header: "#1A191E",
-        input: "DADADA",
+        input: "#DADADA",
         shadow: "#d3d3d3",
     },
     fonts: {

@@ -1,11 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { ContentWrapper, StyledCard, TextWrapper } from "../styles/StyledCard";
+import {
+    ContentWrapper,
+    StyledCard,
+    Subtitle,
+    TextWrapper,
+} from "../styles/StyledCard";
 import { faCirclePlus, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import { Icon } from "../styles/StyledButton";
+import { BoldText, Paragraph } from "../styles/StyledForm";
+import ProgressBar from "../components/ProgressBar";
 
 const Budget = () => {
     const [category, setCategory] = useState(null);
@@ -26,23 +33,28 @@ const Budget = () => {
                     children="Add Category"
                 />
             </ContentWrapper>
-
             <Card>
                 <Icon>
                     <FontAwesomeIcon icon={faGamepad} size="2x" />
                 </Icon>
                 <TextWrapper>
                     <ContentWrapper>
-                        <h3>Entertainment</h3>
-
-                        <p>
-                            $100
-                            <span>/$500</span>
-                        </p>
+                        <Subtitle>Entertainment</Subtitle>
+                        <div>
+                            <BoldText>$100 </BoldText>
+                            <Paragraph>/$500</Paragraph>
+                        </div>
                     </ContentWrapper>
 
-                    <hr></hr>
-                    <Button onClick={() => "Hello"} children={"Add Expenses"} />
+                    <ProgressBar completed={20}></ProgressBar>
+                    <Button
+                        onClick={() => "Hello"}
+                        children={"Add Expenses"}
+                        color="#ffd166"
+                        background="white"
+                        border=" 1px solid #ffd166"
+                        height="35px"
+                    />
                 </TextWrapper>
             </Card>
         </>

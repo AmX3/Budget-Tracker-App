@@ -18,8 +18,8 @@ export const StyledButton = styled.button`
 `;
 
 export const Heading = styled.h2`
-    font-weight: 300;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 16px;
 `;
 
 export const Icon = styled.div`
