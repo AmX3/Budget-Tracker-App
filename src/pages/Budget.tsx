@@ -13,6 +13,7 @@ import Card from "../components/Card";
 import { Icon } from "../styles/StyledButton";
 import { BoldText, Paragraph } from "../styles/StyledForm";
 import ProgressBar from "../components/ProgressBar";
+import { StyledLink } from "../styles/StyledLink";
 
 const Budget = () => {
     const [category, setCategory] = useState(null);
@@ -25,6 +26,10 @@ const Budget = () => {
     return (
         <>
             <Header children={"Hi Amelia"} />
+            <StyledLink to="/">
+                <Button onClick={() => "hello"} children={"Log Off"} />
+            </StyledLink>
+
             <ContentWrapper>
                 <h3>Budget Plan</h3>
                 <Button

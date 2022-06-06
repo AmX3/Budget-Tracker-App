@@ -4,6 +4,8 @@
 
 A hobby project based around creating a budget app, allowing the user to track their income and spending.
 
+Auth0 for authentication and Firebase/Firestore for database operation => IN PROGRESS
+
 ## Goal
 
 -   To create a minimalistic and functional UI design

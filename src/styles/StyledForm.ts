@@ -51,6 +51,8 @@ export const Field = styled.input`
 export const BoldText = styled.span`
     font-weight: bold;
     font-size: 16px;
+    text-decoration: underline;
+    color: ${(props: FormProps) => props.theme.colors["header"]};
 `;
 
 export const UserCircle = styled.div`

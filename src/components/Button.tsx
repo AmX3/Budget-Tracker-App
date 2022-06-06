@@ -5,7 +5,8 @@ import { Heading, StyledButton } from "../styles/StyledButton";
 interface IButtonProps {
     icon?: JSX.Element;
     children?: React.ReactNode;
-    onClick: () => void;
+    onClick?: () => void;
+    onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
     height?: string;
     width?: string;
     color?: string;
@@ -16,6 +17,7 @@ interface IButtonProps {
 const Button: React.FC<IButtonProps> = ({
     children,
     onClick,
+    onSubmit,
     height,
     width,
     color,
@@ -24,6 +26,7 @@ const Button: React.FC<IButtonProps> = ({
 }) => {
     return (
         <StyledButton
+            onSubmit={() => onSubmit}
             onClick={onClick}
             style={{ color, height, width, border, background }}>
             <Heading>{children}</Heading>
