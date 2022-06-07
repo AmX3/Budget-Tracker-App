@@ -6,25 +6,35 @@ interface ProgressBarProps {
     // completed: number;
 }
 
-export const Background = styled.div`
-    height: 15px;
+export const Container = styled.div`
+    progress[value] {
+        border-radius: 10px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    progress[value]::-webkit-progress-bar {
+        height: 15px;
+        border-radius: 20px;
+        background-color: ${(props: ProgressBarProps) =>
+            props.theme.colors["shadow"]};
+    }
+
+    progress[value]::-webkit-progress-value {
+        border-radius: 20px;
+        background-color: ${(props: ProgressBarProps) =>
+            props.theme.colors["secondary"]};
+    }
+`;
+export const Background = styled.progress`
     width: 100%;
-    background: ${(props: ProgressBarProps) => props.theme.colors["input"]};
-
-    border-radius: 10px;
 `;
 
-export const Filler = styled.div`
-    height: 100%;
-    width: 70px;
-    background: ${(props: ProgressBarProps) => props.theme.colors["secondary"]};
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+export const Progress = styled.div`
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    width: 270px;
+    margin-top: 3px;
 `;
-
-export const Progress = styled.span`
-    font-size: 12px;
-`;
-/* width: ${completed}% */

@@ -19,7 +19,7 @@ const WelcomeUser = () => {
             return;
         }
         // When clicking on the button, the username is then set to the current input. First letter of name is always uppercase
-        setUsername(name.charAt(0).toUpperCase() + name.slice(1));
+        setUsername(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
         // Resetting name to an empty value
         setName("");
         console.log(name);

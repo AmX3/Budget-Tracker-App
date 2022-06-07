@@ -5,7 +5,7 @@ import { faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 import { StyledLink } from "../styles/StyledLink";
 import { useState } from "react";
 import { Icon } from "../styles/StyledButton";
-import Card from "../components/Card";
+import { StyledCard } from "../styles/StyledCard";
 
 const Home = () => {
     const [buttonText, setButtonText] = useState("Log In");
@@ -32,7 +32,7 @@ const Home = () => {
             <StyledLink to="/login">
                 <Button onClick={handleButtonText} children={buttonText} />
             </StyledLink>
-            <Card>
+            <StyledCard>
                 <div>
                     <h3>Category Budgets</h3>
                     <p> Login to View</p>
@@ -40,7 +40,7 @@ const Home = () => {
                 <Icon>
                     <FontAwesomeIcon icon={faHandHoldingDollar} size="2x" />
                 </Icon>
-            </Card>
+            </StyledCard>
         </>
     );
 };
