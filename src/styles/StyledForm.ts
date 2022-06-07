@@ -71,3 +71,13 @@ export const Paragraph = styled.span`
     text-align: center;
     font-size: 14px;
 `;
+
+export const Welcome = styled.div`
+    height: 200px;
+    width: 90%;
+    background: ${(props: FormProps) => props.theme.colors["body"]};
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+`;

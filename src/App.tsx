@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Budget from "./pages/Budget";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import WelcomeUser from "./pages/WelcomeUser";
+import UsernameProvider from "./context/Username";
 
 function App() {
     return (
@@ -17,12 +19,18 @@ function App() {
                 <GlobalPageStylingProvider />
                 <StyledPage>
                     <StyledPhone>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/signup" element={<Signup />} />
-                            <Route path="/budget" element={<Budget />} />
-                        </Routes>
+                        <UsernameProvider>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route
+                                    path="/login"
+                                    element={<WelcomeUser />}
+                                />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/signup" element={<Signup />} />
+                                <Route path="/budget" element={<Budget />} />
+                            </Routes>
+                        </UsernameProvider>
                     </StyledPhone>
                 </StyledPage>
             </ThemeProvider>

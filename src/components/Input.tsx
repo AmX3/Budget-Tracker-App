@@ -5,13 +5,21 @@ import { Field, Label } from "../styles/StyledForm";
 interface IInputProps {
     name: string;
     label: string;
-    type?: InputType;
+    type?: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-const Input: React.FC<IInputProps> = ({ name, label, type }) => {
+const Input: React.FC<IInputProps> = ({
+    name,
+    label,
+    type,
+    value,
+    onChange,
+}) => {
     return (
         <>
             <Label>{label}</Label>
-            <Field name={name} type="" />
+            <Field name={name} type={type} value={value} onChange={onChange} />
         </>
     );
 };

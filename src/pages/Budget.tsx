@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
     ContentWrapper,
@@ -13,18 +13,23 @@ import Card from "../components/Card";
 import { Icon } from "../styles/StyledButton";
 import { BoldText, Paragraph } from "../styles/StyledForm";
 import ProgressBar from "../components/ProgressBar";
+import { UsernameContext } from "../context/Username";
 
 const Budget = () => {
     const [category, setCategory] = useState(null);
     const [categories, setCategories] = useState<[]>([]);
-
+    const { username, setUsername } = useContext(UsernameContext);
     // const handleNewCategory = () => {
     //     setCategories([...categories, newCategory]);
     // };
 
+    useEffect(() => {
+        setUsername(username);
+    }, []);
+
     return (
         <>
-            <Header children={"Hi Amelia"} />
+            <Header children={`Hi ${username}`} />
             <ContentWrapper>
                 <h3>Budget Plan</h3>
                 <Button
