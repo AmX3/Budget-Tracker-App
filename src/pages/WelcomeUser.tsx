@@ -31,7 +31,7 @@ const WelcomeUser = () => {
             <Welcome>
                 <Input
                     name="name"
-                    label="Enter a name"
+                    label="Enter First Name:"
                     type="text"
                     value={name}
                     onChange={handleInput}
@@ -41,6 +41,7 @@ const WelcomeUser = () => {
                         onClick={handleClick}
                         children={"Lets Budget!"}
                         width="100%"
+                        type={"submit"}
                     />
                 </StyledLink>
             </Welcome>

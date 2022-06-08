@@ -4,6 +4,7 @@ import { ITheme } from "../theme/InterfaceStyles";
 interface FormProps {
     theme: ITheme;
 }
+
 export const AutheticationPage = styled.div`
     display: flex;
     flex-direction: column;

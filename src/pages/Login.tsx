@@ -29,6 +29,7 @@ const Login = () => {
                         onClick={() => "hello"}
                         children={"Log In"}
                         width="100%"
+                        type={"submit"}
                     />
                 </StyledLink>
                 <Paragraph>

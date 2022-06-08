@@ -7,7 +7,9 @@ export interface UsernameContextInterface {
 // This createContext method returns an object
 export const UsernameContext = createContext<UsernameContextInterface>({
     username: "",
-    setUsername: () => {},
+    setUsername: () => {
+        ("");
+    },
 });
 
 export const UsernameProvider = ({ children }: any) => {

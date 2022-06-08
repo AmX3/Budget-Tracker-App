@@ -1,7 +1,7 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "../styles/StyledButton";
 import {
     ContentWrapper,
@@ -10,9 +10,12 @@ import {
     TextWrapper,
 } from "../styles/StyledCard";
 import { BoldText, Paragraph } from "../styles/StyledForm";
-import theme, { ITheme } from "../theme/InterfaceStyles";
 import { currencyFormatter } from "../utils/utils";
 import Button from "./Button";
+import Dropdown from "./Dropdown";
+import Expense from "./Expense";
+import Input from "./Input";
+import Modal from "./Modal";
 import ProgressBar from "./ProgressBar";
 
 interface IBudgetCardProps {
@@ -28,6 +31,15 @@ const BudgetCard: React.FC<IBudgetCardProps> = ({
     maximum,
     icon,
 }) => {
+    const [expenseModal, setExpenseModal] = useState<boolean>(false);
+    const toggleExpense = () => {
+        setExpenseModal(!expenseModal);
+    };
+
+    const [viewExpensesModal, setViewExpensesModal] = useState<boolean>(false);
+    const toggleViewExpenses = () => {
+        setViewExpensesModal(!viewExpensesModal);
+    };
     return (
         <StyledCard>
             <Icon>
@@ -44,14 +56,53 @@ const BudgetCard: React.FC<IBudgetCardProps> = ({
                     </div>
                 </ContentWrapper>
                 <ProgressBar amount={amount} maximum={maximum}></ProgressBar>
-                <Button
-                    onClick={() => "Hello"}
-                    children={"Add Expenses"}
-                    color="#ffd166"
-                    background="white"
-                    border=" 1px solid #ffd166"
-                    height="35px"
-                />{" "}
+                <ContentWrapper>
+                    <Button
+                        onClick={toggleExpense}
+                        children={"Add Expenses"}
+                        background="white"
+                        border=" 1px solid #ffd166"
+                        height="35px"
+                        type={"submit"}
+                    />
+                    <Button
+                        onClick={toggleViewExpenses}
+                        children={"View Expenses"}
+                        background="white"
+                        border=" 1px solid #ffd166"
+                        height="35px"
+                        type={"submit"}
+                    />
+                    <Modal
+                        isShown={expenseModal}
+                        hide={toggleExpense}
+                        headerText={"New Expense"}
+                        modalContent={
+                            <>
+                                <Input
+                                    name={"Description"}
+                                    label={"Description"}
+                                    type="text"
+                                />
+                                <Input
+                                    name={"Amount"}
+                                    label={"Amount"}
+                                    type="number"
+                                />
+                            </>
+                        }
+                    />
+                    <Modal
+                        isShown={viewExpensesModal}
+                        hide={toggleViewExpenses}
+                        headerText={"View Expenses"}
+                        modalContent={
+                            <>
+                                <Expense />
+                            </>
+                        }
+                    />
+                </ContentWrapper>
             </TextWrapper>
         </StyledCard>
     );

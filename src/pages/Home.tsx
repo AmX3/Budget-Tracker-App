@@ -30,7 +30,11 @@ const Home = () => {
         <>
             <Header children={greeting} />
             <StyledLink to="/login">
-                <Button onClick={handleButtonText} children={buttonText} />
+                <Button
+                    onClick={handleButtonText}
+                    children={buttonText}
+                    type={"submit"}
+                />
             </StyledLink>
             <StyledCard>
                 <div>

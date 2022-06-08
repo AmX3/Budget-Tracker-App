@@ -1,16 +1,17 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { Heading, StyledButton } from "../styles/StyledButton";
 
 // Creating a button props where all buttons will have a dynamic text and an onClick function. Additional customisation of buttons are also optional
 
 interface IButtonProps {
-    icon?: JSX.Element;
-    children?: React.ReactNode;
+    icon?: IconProp;
+    children: string;
     onClick: () => void;
     height?: string;
     width?: string;
-    color?: string;
     border?: string;
     background?: string;
+    type: "submit";
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -18,14 +19,16 @@ const Button: React.FC<IButtonProps> = ({
     onClick,
     height,
     width,
-    color,
     border,
     background,
+    icon,
+    type,
 }) => {
     return (
         <StyledButton
             onClick={onClick}
-            style={{ color, height, width, border, background }}>
+            type={type}
+            style={{ height, width, border, background }}>
             <Heading>{children}</Heading>
         </StyledButton>
     );

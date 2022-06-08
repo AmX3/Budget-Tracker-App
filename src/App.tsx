@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import WelcomeUser from "./pages/WelcomeUser";
 import UsernameProvider from "./context/Username";
+// import BudgetsProvider from "./context/Budgets";
 
 function App() {
     return (
@@ -20,16 +21,18 @@ function App() {
                 <StyledPage>
                     <StyledPhone>
                         <UsernameProvider>
+                            {/* <BudgetsProvider> */}
                             <Routes>
                                 <Route path="/" element={<Home />} />
+                                {/* <Route path="/login" element={<Login />} /> */}
+                                {/* <Route path="/signup" element={<Signup />} /> */}
                                 <Route
                                     path="/login"
                                     element={<WelcomeUser />}
                                 />
-                                <Route path="/login" element={<Login />} />
-                                <Route path="/signup" element={<Signup />} />
                                 <Route path="/budget" element={<Budget />} />
                             </Routes>
+                            {/* </BudgetsProvider> */}
                         </UsernameProvider>
                     </StyledPhone>
                 </StyledPage>

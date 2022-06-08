@@ -27,6 +27,7 @@ const Signup = () => {
                     onClick={() => "hello"}
                     children={"Sign Up"}
                     width="100%"
+                    type={"submit"}
                 />
                 <Paragraph>
                     Already have an account? <BoldText>Log in!</BoldText>
