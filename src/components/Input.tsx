@@ -5,7 +5,7 @@ import { Field, Label } from "../styles/StyledForm";
 interface IInputProps {
     name: string;
     label: string;
-    type?: string;
+    type: string;
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

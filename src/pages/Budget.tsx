@@ -9,23 +9,37 @@ import {
 } from "../styles/StyledCard";
 import { faCirclePlus, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
-import Card from "../components/Card";
-import { Icon } from "../styles/StyledButton";
-import { BoldText, Paragraph } from "../styles/StyledForm";
-import ProgressBar from "../components/ProgressBar";
 import { UsernameContext } from "../context/Username";
+import BudgetCard from "../components/BudgetCard";
+import { getAllCategories } from "../services/categories";
+import Modal from "../components/Modal";
+import Input from "../components/Input";
+import Dropdown from "../components/Dropdown";
+import Total from "../components/Total";
 
 const Budget = () => {
-    const [category, setCategory] = useState(null);
-    const [categories, setCategories] = useState<[]>([]);
-    const { username, setUsername } = useContext(UsernameContext);
+    const [expenses, setExpenses] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const { username } = useContext(UsernameContext);
+
+    const [categoryModal, setCategoryModal] = useState<boolean>(false);
+
+    const toggleCategory = () => {
+        setCategoryModal(!categoryModal);
+    };
+
+    // const getCategoryData = async () => {
+    //     const data = await getAllCategories();
+    //     setCategories(data);
+    // };
+
+    // useEffect(getCategoryData()=> {
+
+    // },[])
+
     // const handleNewCategory = () => {
     //     setCategories([...categories, newCategory]);
     // };
-
-    useEffect(() => {
-        setUsername(username);
-    }, []);
 
     return (
         <>
@@ -33,35 +47,34 @@ const Budget = () => {
             <ContentWrapper>
                 <h3>Budget Plan</h3>
                 <Button
-                    icon={<FontAwesomeIcon icon={faCirclePlus} size="lg" />}
-                    onClick={() => "Hello"}
+                    icon={faCirclePlus}
+                    onClick={toggleCategory}
                     children="Add Category"
+                    type={"submit"}
                 />
             </ContentWrapper>
-            <Card>
-                <Icon>
-                    <FontAwesomeIcon icon={faGamepad} size="2x" />
-                </Icon>
-                <TextWrapper>
-                    <ContentWrapper>
-                        <Subtitle>Entertainment</Subtitle>
-                        <div>
-                            <BoldText>$100 </BoldText>
-                            <Paragraph>/$500</Paragraph>
-                        </div>
-                    </ContentWrapper>
-
-                    <ProgressBar completed={20}></ProgressBar>
-                    <Button
-                        onClick={() => "Hello"}
-                        children={"Add Expenses"}
-                        color="#ffd166"
-                        background="white"
-                        border=" 1px solid #ffd166"
-                        height="35px"
-                    />
-                </TextWrapper>
-            </Card>
+            <Total />
+            <BudgetCard
+                name={"Entertainment"}
+                amount={100}
+                maximum={400}
+                icon={faGamepad}
+            />
+            <Modal
+                isShown={categoryModal}
+                hide={toggleCategory}
+                headerText={"New Category"}
+                modalContent={
+                    <>
+                        <Dropdown />
+                        <Input
+                            name={"Maximum"}
+                            label={"Maximum Spending"}
+                            type="number"
+                        />
+                    </>
+                }
+            />
         </>
     );
 };

@@ -19,7 +19,7 @@ const WelcomeUser = () => {
             return;
         }
         // When clicking on the button, the username is then set to the current input. First letter of name is always uppercase
-        setUsername(name.charAt(0).toUpperCase() + name.slice(1));
+        setUsername(name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
         // Resetting name to an empty value
         setName("");
         console.log(name);
@@ -31,7 +31,7 @@ const WelcomeUser = () => {
             <Welcome>
                 <Input
                     name="name"
-                    label="Enter a name"
+                    label="Enter First Name:"
                     type="text"
                     value={name}
                     onChange={handleInput}
@@ -41,6 +41,7 @@ const WelcomeUser = () => {
                         onClick={handleClick}
                         children={"Lets Budget!"}
                         width="100%"
+                        type={"submit"}
                     />
                 </StyledLink>
             </Welcome>
