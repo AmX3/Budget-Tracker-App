@@ -23,7 +23,7 @@ export const Backdrop = styled.div`
     z-index: 500;
 `;
 
-export const StyledModal = styled.form`
+export const StyledModal = styled.div`
     width: 310px;
     height: 280px;
     z-index: 100;
@@ -58,4 +58,24 @@ export const ModalBody = styled.form`
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+`;
+
+export const DropdownWrapper = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const DropdownSelect = styled.select`
+    width: 100%;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid ${(props: ModalProps) => props.theme.colors["input"]};
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: ""; */
+`;
+
+export const DropdownOption = styled.option`
+    color: ${(props: ModalProps) => props.theme.colors["header"]};
 `;

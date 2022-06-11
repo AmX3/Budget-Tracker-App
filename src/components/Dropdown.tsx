@@ -1,7 +1,5 @@
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DropdownOption, DropdownSelect } from "../styles/StyledDropdown";
-import { Label, StyledForm } from "../styles/StyledForm";
+import { DropdownOption, DropdownSelect } from "../styles/StyledModal";
+import { Label } from "../styles/StyledForm";
 
 const Dropdown = () => {
     return (

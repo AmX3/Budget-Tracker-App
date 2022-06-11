@@ -1,7 +1,6 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReactDOM from "react-dom";
-import { StyledForm } from "../styles/StyledForm";
 import {
     Backdrop,
     ModalBody,
@@ -11,7 +10,6 @@ import {
     Wrapper,
 } from "../styles/StyledModal";
 import Button from "./Button";
-import Header from "./Header";
 
 export interface ModalProps {
     isShown: boolean;

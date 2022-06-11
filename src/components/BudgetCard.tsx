@@ -1,4 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
@@ -10,9 +11,9 @@ import {
     TextWrapper,
 } from "../styles/StyledCard";
 import { BoldText, Paragraph } from "../styles/StyledForm";
+import { ModalCloseIcon } from "../styles/StyledModal";
 import { currencyFormatter } from "../utils/utils";
 import Button from "./Button";
-import Dropdown from "./Dropdown";
 import Expense from "./Expense";
 import Input from "./Input";
 import Modal from "./Modal";
@@ -43,7 +44,7 @@ const BudgetCard: React.FC<IBudgetCardProps> = ({
     return (
         <StyledCard>
             <Icon>
-                <FontAwesomeIcon icon={icon} size="2x" />
+                <FontAwesomeIcon icon={icon} size="lg" />
             </Icon>
             <TextWrapper>
                 <ContentWrapper>
@@ -104,6 +105,9 @@ const BudgetCard: React.FC<IBudgetCardProps> = ({
                     />
                 </ContentWrapper>
             </TextWrapper>
+            <ModalCloseIcon>
+                <FontAwesomeIcon icon={faTrashCan} size="lg" />
+            </ModalCloseIcon>
         </StyledCard>
     );
 };

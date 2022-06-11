@@ -14,6 +14,7 @@ export const StyledPhone = styled.div`
     box-shadow: -15px 10px 1px 1px
         ${(props: PhoneProps) => props.theme.colors["shadow"]};
     padding: 2rem;
+    overflow: auto;
 `;
 
 export const Image = styled.img`
@@ -22,4 +23,12 @@ export const Image = styled.img`
     border-radius: 0 0 2em 2em;
     max-width: 100%;
     margin-top: 110px;
+`;
+
+export const StyledPage = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 `;

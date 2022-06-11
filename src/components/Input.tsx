@@ -1,5 +1,4 @@
 import React from "react";
-import { InputType } from "zlib";
 import { Field, Label } from "../styles/StyledForm";
 
 interface IInputProps {

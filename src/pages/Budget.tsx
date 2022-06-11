@@ -1,25 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Header from "../components/Header";
-import {
-    ContentWrapper,
-    StyledCard,
-    Subtitle,
-    TextWrapper,
-} from "../styles/StyledCard";
+import { ContentWrapper } from "../styles/StyledCard";
 import { faCirclePlus, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
 import { UsernameContext } from "../context/Username";
 import BudgetCard from "../components/BudgetCard";
-import { getAllCategories } from "../services/categories";
+
 import Modal from "../components/Modal";
 import Input from "../components/Input";
 import Dropdown from "../components/Dropdown";
 import Total from "../components/Total";
 
 const Budget = () => {
-    const [expenses, setExpenses] = useState([]);
-    const [categories, setCategories] = useState([]);
+    // const [expenses, setExpenses] = useState([]);
+    // const [categories, setCategories] = useState([]);
     const { username } = useContext(UsernameContext);
 
     const [categoryModal, setCategoryModal] = useState<boolean>(false);
