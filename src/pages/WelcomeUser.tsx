@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Input from "../components/Input";
 import { UsernameContext } from "../context/Username";
 import { AutheticationPage, Welcome } from "../styles/StyledForm";
-import { StyledLink } from "../styles/StyledLink";
+import { StyledLink } from "../styles/StyledButton";
 
 const WelcomeUser = () => {
     const [name, setName] = useState<string>("");
@@ -15,7 +15,7 @@ const WelcomeUser = () => {
     };
 
     const handleClick = () => {
-        if (name.length == 0) {
+        if (name.length === 0) {
             return;
         }
         // When clicking on the button, the username is then set to the current input. First letter of name is always uppercase

@@ -1,14 +1,12 @@
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/InterfaceStyles";
 import GlobalPageStylingProvider from "./theme/GlobalPageStylingProvider";
-import { StyledPhone } from "./styles/StyledPhone";
-import { StyledPage } from "./styles/StyledPage";
+import { StyledPage, StyledPhone } from "./styles/StyledPhone";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Budget from "./pages/Budget";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+
 import WelcomeUser from "./pages/WelcomeUser";
 import UsernameProvider from "./context/Username";
 // import BudgetsProvider from "./context/Budgets";

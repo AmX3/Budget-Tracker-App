@@ -1,10 +1,10 @@
-interface IColors {
-    primary: string;
-    secondary: string;
-    body: string;
-    header: string;
-    shadow: string;
-}
+// interface IColors {
+//     primary: string;
+//     secondary: string;
+//     body: string;
+//     header: string;
+//     shadow: string;
+// }
 
 interface IColorsHash {
     [color: string]: string;

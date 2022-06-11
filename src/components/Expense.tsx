@@ -1,4 +1,4 @@
-import { faCircleXmark, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ContentWrapper } from "../styles/StyledCard";
 import { Paragraph } from "../styles/StyledForm";

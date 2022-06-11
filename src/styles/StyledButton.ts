@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ITheme } from "../theme/InterfaceStyles";
 
 interface ButtonProps {
@@ -24,4 +25,17 @@ export const Heading = styled.h2`
 
 export const Icon = styled.div`
     color: ${(props: ButtonProps) => props.theme.colors["secondary"]};
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+        text-decoration: none;
+    }
 `;

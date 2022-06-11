@@ -1,19 +1,17 @@
 import {
     ContentWrapper,
-    StyledCard,
     Subtitle,
     TextWrapper,
     TotalBalance,
 } from "../styles/StyledCard";
 import { BoldText, Paragraph } from "../styles/StyledForm";
 import { currencyFormatter } from "../utils/utils";
-import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 
-interface IBudgetCardProps {
-    amount: number;
-    maximum: number;
-}
+// interface IBudgetCardProps {
+//     amount: number;
+//     maximum: number;
+// }
 
 const Total = () => {
     return (

@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
-import { StyledLink } from "../styles/StyledLink";
+import { StyledLink } from "../styles/StyledButton";
 import { useState } from "react";
 import { Icon } from "../styles/StyledButton";
 import { StyledCard } from "../styles/StyledCard";

@@ -11,7 +11,7 @@ import {
     User,
     UserCircle,
 } from "../styles/StyledForm";
-import { StyledLink } from "../styles/StyledLink";
+import { StyledLink } from "../styles/StyledButton";
 
 const Login = () => {
     return (
